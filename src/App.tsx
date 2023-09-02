@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { supabase } from "./supabaseClient";
+import { Button } from "./components/ui/button";
 
 type Employee = {
   id: string;
@@ -21,6 +22,7 @@ function App() {
       {employees.map((e) => (
         <p>{e.hk_id}</p>
       ))}
+      <Button>Test</Button>
     </>
   );
 }
