@@ -27,19 +27,42 @@ If you are developing a production application, we recommend updating the config
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
 ### Tailwind
-- yarn add _-D tailwindcss
-- npx tailwindcss init
+- yarn add -D tailwindcss postcss autoprefixer
+- npx tailwindcss init -p
 - tailwind.config.js
 ```
-module.exports = {
-  content: ["./src/**/*.{html,js}"],
-  theme: {
-    extend: {}
-  },
-  plugins: [],
-}
+  /** @type {import('tailwindcss').Config} */
+  module.exports = {
+    content: ["./src/**/*.{html,js}"],
+    theme: {
+      extend: {}
+    },
+    plugins: [],
+  }
 ```
 
 
+```
+  /** index.css */
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+```
 ### Supabase
 
+- npm install @supabase/supabase-js
+- save env variables
+```
+  //.env
+  VITE_SUPABASE_URL=YOUR_SUPABASE_URL
+  VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
+- create supabaseClient.ts
+```
+  import { createClient } from '@supabase/supabase-js'
+
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+
+  export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+```

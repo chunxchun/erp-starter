@@ -1,14 +1,26 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useEffect, useState } from "react";
 import "./App.css";
+import { supabase } from "./supabaseClient";
 
+type Employee = {
+  id: string;
+  hk_id: string;
+};
 function App() {
-  const [count, setCount] = useState(0);
+  const [employees, setEmployees] = useState<Employee[]>([]);
+  useEffect(() => {
+    supabase
+      .from("employees")
+      .select()
+      .then((result) => setEmployees(result.data as unknown as Employee[]));
+  }, []);
 
   return (
     <>
       <h1 className="font-bold underline">HIHI</h1>
+      {employees.map((e) => (
+        <p>{e.hk_id}</p>
+      ))}
     </>
   );
 }
