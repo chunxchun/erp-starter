@@ -1,36 +1,14 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import { supabase } from "./supabaseClient";
+import MainLayout from "@/components/layouts/MainLayout";
 import { Button } from "@/components/ui/button";
-import Navbar from "@/components/Navbar";
-import { useTranslation } from "react-i18next";
+import { Outlet } from "react-router-dom";
+import "./App.css";
 
-type Employee = {
-  id: string;
-  hk_id: string;
-};
 function App() {
-  const { t } = useTranslation();
-
-  const [employees, setEmployees] = useState<Employee[]>([]);
-
-  useEffect(() => {
-    supabase
-      .from("employees")
-      .select()
-      .then((result) => setEmployees(result.data as unknown as Employee[]));
-  }, []);
-
   return (
-    <>
-      <Navbar />
-      <h1 className="font-bold underline">{t("Welcome to React")}</h1>
-      {employees.map((e) => (
-        <p>{e.hk_id}</p>
-      ))}
-      <h1>{t("Button")}</h1>
+    <MainLayout>
       <Button>Test</Button>
-    </>
+      <Outlet />
+    </MainLayout>
   );
 }
 

@@ -1,9 +1,8 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import i18n from "@/i18n";
 
 const LanguageSwitchButton = () => {
-  const [language, setLanguage] = React.useState('hk');
+  // const [language, setLanguage] = React.useState('hk');
 
   return (
     // switch language button

@@ -14,6 +14,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import LanguageSwitchButton from "./LanguageSwitchButton";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   return (
@@ -105,7 +106,8 @@ const Navbar = () => {
           </MenubarContent>
         </MenubarMenu>
       </Menubar> */}
-      <ul className='flex flex-row space-x-4'>
+      <Sidebar />
+      <ul className="flex flex-row space-x-4">
         <li>Home</li>
         <li>Employees</li>
         <li>Projects</li>
