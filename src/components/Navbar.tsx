@@ -1,18 +1,3 @@
-import {
-  Menubar,
-  MenubarCheckboxItem,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
 import LanguageSwitchButton from "./LanguageSwitchButton";
 import Sidebar from "./Sidebar";
 
