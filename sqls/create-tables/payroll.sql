@@ -10,5 +10,3 @@ CREATE TABLE IF NOT EXISTS public.payrolls (
   CONSTRAINT payroll_pkey PRIMARY KEY (id),
   CONSTRAINT payroll_employee_id_fkey FOREIGN KEY (employee_id) REFERENCES employees (id) ON DELETE CASCADE
 ) tablespace pg_default;
-
-```
