@@ -33,6 +33,21 @@ export interface Database {
         }
         Relationships: []
       }
+      departments: {
+        Row: {
+          id: string
+          name: string
+        }
+        Insert: {
+          id?: string
+          name: string
+        }
+        Update: {
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
       employees: {
         Row: {
           address: string
@@ -117,6 +132,43 @@ export interface Database {
             foreignKeyName: "employees_timesheet_approver_id_fkey"
             columns: ["timesheet_approver_id"]
             referencedRelation: "employees"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      jobs: {
+        Row: {
+          employee_id: string
+          id: string
+          job_period_end: string | null
+          job_period_start: string
+          position_id: string
+        }
+        Insert: {
+          employee_id: string
+          id?: string
+          job_period_end?: string | null
+          job_period_start: string
+          position_id: string
+        }
+        Update: {
+          employee_id?: string
+          id?: string
+          job_period_end?: string | null
+          job_period_start?: string
+          position_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "job_employee_id_fkey"
+            columns: ["employee_id"]
+            referencedRelation: "employees"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "job_position_id_fkey"
+            columns: ["position_id"]
+            referencedRelation: "positions"
             referencedColumns: ["id"]
           }
         ]
@@ -208,6 +260,31 @@ export interface Database {
           name?: string
         }
         Relationships: []
+      }
+      positions: {
+        Row: {
+          department_id: string
+          id: string
+          name: string
+        }
+        Insert: {
+          department_id: string
+          id?: string
+          name: string
+        }
+        Update: {
+          department_id?: string
+          id?: string
+          name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "position_department_id_fkey"
+            columns: ["department_id"]
+            referencedRelation: "departments"
+            referencedColumns: ["id"]
+          }
+        ]
       }
       roles: {
         Row: {
