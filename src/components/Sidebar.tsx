@@ -28,7 +28,7 @@ const Sidebar = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost">Menu</Button>
+        <Button variant="ghost">{t("menu")}</Button>
       </SheetTrigger>
       <SheetContent side={"left"}>
         <SheetHeader>
@@ -37,104 +37,106 @@ const Sidebar = () => {
         </SheetHeader>
 
         <Accordion type="single" collapsible>
-
           {/* roles */}
           <AccordionItem value="roles">
-            <AccordionTrigger>Roles</AccordionTrigger>
+            <AccordionTrigger>{t("roles")}</AccordionTrigger>
             <AccordionContent className="flex flex-row justify-center">
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/roles/list">List</Link>
+                <Link to="/roles/list">{t("list")}</Link>
               </Button>
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/roles/create">Create</Link>
+                <Link to="/roles/create">{t("create")}</Link>
               </Button>
             </AccordionContent>
           </AccordionItem>
 
           {/* employees */}
           <AccordionItem value="employees">
-            <AccordionTrigger>Employees</AccordionTrigger>
+            <AccordionTrigger>{t("employees")}</AccordionTrigger>
             <AccordionContent className="flex flex-row justify-center">
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/employees/list">List</Link>
+                <Link to="/employees/list">{t("list")}</Link>
               </Button>
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/employees/create">Create</Link>
+                <Link to="/employees/create">{t("create")}</Link>
               </Button>
             </AccordionContent>
           </AccordionItem>
 
           {/* departments */}
           <AccordionItem value="departments">
-            <AccordionTrigger>Departments</AccordionTrigger>
+            <AccordionTrigger>{t("departments")}</AccordionTrigger>
             <AccordionContent className="flex flex-row justify-center">
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/departments/list">List</Link>
+                <Link to="/departments/list">{t("list")}</Link>
               </Button>
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/departments/create">Create</Link>
+                <Link to="/departments/create">{t("create")}</Link>
               </Button>
             </AccordionContent>
           </AccordionItem>
 
           {/* positions */}
           <AccordionItem value="positions">
-            <AccordionTrigger>Positions</AccordionTrigger>
+            <AccordionTrigger>{t("positions")}</AccordionTrigger>
             <AccordionContent className="flex flex-row justify-center">
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/positions/list">List</Link>
+                <Link to="/positions/list">{t("list")}</Link>
               </Button>
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/positions/create">Create</Link>
+                <Link to="/positions/create">{t("create")}</Link>
               </Button>
             </AccordionContent>
           </AccordionItem>
 
           {/* payrolls */}
           <AccordionItem value="payrolls">
-            <AccordionTrigger>Payrolls</AccordionTrigger>
+            <AccordionTrigger>{t("payrolls")}</AccordionTrigger>
             <AccordionContent className="flex flex-row justify-center">
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/payrolls/list">List</Link>
+                <Link to="/payrolls/list">{t("list")}</Link>
               </Button>
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/payrolls/create">Create</Link>
+                <Link to="/payrolls/create">{t("create")}</Link>
               </Button>
             </AccordionContent>
           </AccordionItem>
 
           {/* leaves */}
           <AccordionItem value="leaves">
-            <AccordionTrigger>Leaves</AccordionTrigger>
+            <AccordionTrigger>{t("leaves")}</AccordionTrigger>
             <AccordionContent className="flex flex-row justify-center">
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/leaves/list">List</Link>
+                <Link to="/leaves/list">{t("list")}</Link>
               </Button>
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/leaves/create">Create</Link>
+                <Link to="/leaves/create">{t("create")}</Link>
               </Button>
             </AccordionContent>
           </AccordionItem>
 
           {/* timesheets */}
           <AccordionItem value="timesheets">
-            <AccordionTrigger>Timesheets</AccordionTrigger>
+            <AccordionTrigger>{t("timesheets")}</AccordionTrigger>
             <AccordionContent className="flex flex-row justify-center">
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/timesheets/list">List</Link>
+                <Link to="/timesheets/list">{t("list")}</Link>
               </Button>
               <Button variant={"link"} onClick={closeSheet}>
-                <Link to="/timesheets/create">Create</Link>
+                <Link to="/timesheets/create">{t("create")}</Link>
               </Button>
             </AccordionContent>
           </AccordionItem>
-          
         </Accordion>
-        {/* <SheetFooter>
+
+        
+        <SheetFooter>
           <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
+            <Button className="flex" variant={"link"} onClick={closeSheet}>
+              <Link to="/settings">{t("settings")}</Link>
+            </Button>
           </SheetClose>
-        </SheetFooter> */}
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );
