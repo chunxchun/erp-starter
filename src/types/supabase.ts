@@ -377,6 +377,27 @@ export interface Database {
           }
         ]
       }
+      warehouses: {
+        Row: {
+          address: string
+          created_at: string
+          id: string
+          name: string
+        }
+        Insert: {
+          address: string
+          created_at?: string
+          id?: string
+          name: string
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
