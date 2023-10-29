@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import LanguageSwitchButton from "./LanguageSwitchButton";
 import Sidebar from "./Sidebar";
 
 const Navbar = () => {
+  const {t} = useTranslation("navbar");
+  
   return (
     <nav className="flex flex-row justify-between items-center">
       {/* <Menubar>
@@ -93,9 +96,9 @@ const Navbar = () => {
       </Menubar> */}
       <Sidebar />
       <ul className="flex flex-row space-x-4">
-        <li>Home</li>
-        <li>Employees</li>
-        <li>Projects</li>
+        <li>{t('home')}</li>
+        <li>{t('contact')}</li>
+        <li>{t('projects')}</li>
       </ul>
       <LanguageSwitchButton />
     </nav>
