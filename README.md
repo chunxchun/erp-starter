@@ -66,3 +66,8 @@ If you are developing a production application, we recommend updating the config
 
   export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 ```
+- generate type
+  - cli
+    - supabase gen types typescript --local > schema.gen.ts
+  - github actions
+    - create new file .github/workflows/generate-types.yml
