@@ -22,8 +22,17 @@ const CreateRemuneration = () => {
   const form = useForm<Remuneration>({
     resolver: zodResolver(RemunerationSchema),
     defaultValues: {
-      // id: "",
       name: "",
+      employee_id: '',
+      job_id: "",
+      start_date: "",
+      end_date: "",
+      entitled_sick_leave: 7,
+      entitled_annual_leave: 7,
+      entitled_maternity_leave: 14,
+      type: "", // full-time, part-time
+      payment_mode: "", // monthly, hourly
+      amount: 0,
     },
   });
 

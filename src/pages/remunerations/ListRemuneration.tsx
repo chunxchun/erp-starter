@@ -21,7 +21,7 @@ const ListRemuneration = () => {
   useEffect(() => {
     supabase
       .from("remunerations")
-      .select()
+      .select(`*, jobs(name), employees(nickname)`)
       .then((result) => setRemunerations(result.data as unknown as Remuneration[]));
   }, []);
 

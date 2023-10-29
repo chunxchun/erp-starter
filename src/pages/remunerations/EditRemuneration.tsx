@@ -25,7 +25,7 @@ const EditRemuneration = () => {
     defaultValues: async () => {
       const { data } = await supabase
         .from("remunerations")
-        .select()
+        .select(`*, employees(nickname), jobs(name)`)
         .eq("id", remunerationId)
         .single();
 

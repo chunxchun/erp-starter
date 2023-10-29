@@ -27,7 +27,7 @@ const ShowRemuneration = () => {
     const getRemuneration = async () => {
       const { data } = await supabase
         .from("remunerations")
-        .select()
+        .select(`*, jobs(name), employees(nickname)`)
         .eq("id", remunerationId)
         .single();
 
@@ -45,8 +45,44 @@ const ShowRemuneration = () => {
         </CardHeader>
         <CardContent className="flex flex-col items-start px-8 space-y-4">
           <p>
-            <Label>{t("last_name")}</Label>
-            <span className="ml-4 font-semibold">{remuneration?.name}</span>
+            <Label>{t("employee_id")}</Label>
+            <span className="ml-4 font-semibold">{remuneration?.employees.nickname}</span>
+          </p>
+          <p>
+            <Label>{t("job_id")}</Label>
+            <span className="ml-4 font-semibold">{remuneration?.jobs.name}</span>
+          </p>
+          <p>
+            <Label>{t("start_date")}</Label>
+            <span className="ml-4 font-semibold">{remuneration?.start_date}</span>
+          </p>
+          <p>
+            <Label>{t("end_date")}</Label>
+            <span className="ml-4 font-semibold">{remuneration?.end_date}</span>
+          </p>
+          <p>
+            <Label>{t("entitled_sick_leave")}</Label>
+            <span className="ml-4 font-semibold">{remuneration?.entitled_sick_leave}</span>
+          </p>
+          <p>
+            <Label>{t("entitled_annual_leave")}</Label>
+            <span className="ml-4 font-semibold">{remuneration?.entitled_annual_leave}</span>
+          </p>
+          <p>
+            <Label>{t("entitled_maternity_leave")}</Label>
+            <span className="ml-4 font-semibold">{remuneration?.entitled_maternity_leave}</span>
+          </p>
+          <p>
+            <Label>{t("type")}</Label>
+            <span className="ml-4 font-semibold">{remuneration?.type}</span>
+          </p>
+          <p>
+            <Label>{t("payment_mode")}</Label>
+            <span className="ml-4 font-semibold">{remuneration?.payment_mode}</span>
+          </p>
+          <p>
+            <Label>{t("amount")}</Label>
+            <span className="ml-4 font-semibold">{remuneration?.amount}</span>
           </p>
         </CardContent>
         <CardFooter className="flex justify-between">
