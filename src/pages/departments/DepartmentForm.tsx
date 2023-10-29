@@ -12,6 +12,7 @@ import { UseFormReturn } from "react-hook-form";
 
 import TextFormField from "@/components/formFields/TextFormField";
 import { TFunction } from "i18next";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   form: UseFormReturn<Department>;
@@ -20,6 +21,8 @@ interface Props {
 }
 
 const DepartmentForm = ({ form, onSubmit, t }: Props) => {
+  const navigate = useNavigate();
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -35,7 +38,14 @@ const DepartmentForm = ({ form, onSubmit, t }: Props) => {
               placeholder={t("name")}
             />
           </CardContent>
-          <CardFooter>
+          <CardFooter className="flex justify-between">
+            <Button
+              type="button"
+              variant={"outline"}
+              onClick={() => navigate(-1)}
+            >
+              {t("cancel")}
+            </Button>
             <Button type="submit">{t("submit")}</Button>
           </CardFooter>
         </Card>

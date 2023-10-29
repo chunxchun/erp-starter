@@ -1,6 +1,5 @@
 import * as z from "zod";
 
-import type { Employee, EmployeeInsert } from "@/types/Employee";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -29,16 +28,25 @@ const CreateDepartment = () => {
   });
 
   const onSubmit = async (department: DepartmentInsert) => {
+    const parsedDepartment = {
+      ...department,
+    };
+
     try {
       const { error } = await supabase
         .from("departments")
-        .insert(department)
+        .insert(parsedDepartment)
         .select();
+
       if (error) throw error;
+
       toast({ title: t("submit_success_msg") });
       navigate(-1);
     } catch (err) {
-      toast({ title: t("submit_fail_msg"), description: `${JSON.stringify(err)}` });
+      toast({
+        title: t("submit_fail_msg"),
+        description: `${JSON.stringify(err)}`,
+      });
     }
   };
 

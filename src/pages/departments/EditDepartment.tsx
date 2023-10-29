@@ -13,8 +13,8 @@ import DepartmentForm from "./DepartmentForm";
 const DepartmentSchema = z.custom<Department>();
 
 const EditDepartment = () => {
-  const { id: userId } = useParams();
-  if (!userId) return;
+  const { id: departmentId } = useParams();
+  if (!departmentId) return;
 
   const { t } = useTranslation("edit_department");
   const { toast } = useToast();
@@ -26,7 +26,7 @@ const EditDepartment = () => {
       const { data } = await supabase
         .from("departments")
         .select()
-        .eq("id", userId)
+        .eq("id", departmentId)
         .single();
 
       return data as unknown as Department;
@@ -34,10 +34,14 @@ const EditDepartment = () => {
   });
 
   const onSubmit = async (department: DepartmentInsert) => {
+    const parsedDepartment = {
+      ...department,
+    };
+
     try {
       const { error } = await supabase
         .from("departments")
-        .insert(department)
+        .insert(parsedDepartment)
         .select();
 
       if (error) throw error;
