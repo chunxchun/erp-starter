@@ -1,6 +1,5 @@
 import * as z from "zod";
 
-import type { Employee, EmployeeInsert } from "@/types/Employee";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -11,10 +10,12 @@ import { useNavigate } from "react-router-dom";
 
 import EmployeeForm from "./EmployeeForm";
 
+import type { Employee, EmployeeInsert } from "@/types/Employee";
+
 const EmployeeSchema = z.custom<Employee>();
 
 const CreateEmployee = () => {
-  const { t } = useTranslation("create_employee");
+  const { t } = useTranslation("employees", { keyPrefix: "create_employee" });
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -33,14 +34,11 @@ const CreateEmployee = () => {
     },
   });
 
-
   const onSubmit = async (employee: EmployeeInsert) => {
-    // console.log(employee);
     const parsedEmployee = {
       ...employee,
       birthday: new Date(employee.birthday).toLocaleDateString("en-CA"), // YYYY-MM-DD
     };
-    // console.log(parsedEmployee);
 
     try {
       const { error } = await supabase
@@ -50,14 +48,12 @@ const CreateEmployee = () => {
 
       if (error) throw error;
 
-      toast({
-        title: t("submit_success_msg"),
-      });
+      toast({ title: t("submit_success_msg") });
       navigate(-1);
     } catch (err) {
       toast({
         title: t("submit_fail_msg"),
-        description: `${err}`,
+        description: `${JSON.stringify(err)}`,
       });
     }
   };

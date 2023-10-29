@@ -15,6 +15,7 @@ import EmailFormField from "@/components/formFields/EmailFormField";
 import TextFormField from "@/components/formFields/TextFormField";
 import { TFunction } from "i18next";
 import SelectFormField from "@/components/formFields/SelectFormField";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   form: UseFormReturn<Employee>;
@@ -23,6 +24,8 @@ interface Props {
 }
 
 const EmployeeForm = ({ form, onSubmit, t }: Props) => {
+  const navigate = useNavigate();
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -96,7 +99,14 @@ const EmployeeForm = ({ form, onSubmit, t }: Props) => {
               placeholder={t("select_form_placeholder")}
             />
           </CardContent>
-          <CardFooter>
+          <CardFooter className="flex justify-between">
+            <Button
+              type="button"
+              variant={"outline"}
+              onClick={() => navigate(-1)}
+            >
+              {t("cancel")}
+            </Button>
             <Button type="submit">{t("submit")}</Button>
           </CardFooter>
         </Card>

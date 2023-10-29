@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import type { Employee } from "@/types/Employee";
 
 const ListEmployee = () => {
-  const { t } = useTranslation("list_employee");
+  const { t } = useTranslation("employees", { keyPrefix: "list_employee" });
   const [employees, setEmployees] = useState<Employee[]>([]);
 
   useEffect(() => {
@@ -24,10 +24,6 @@ const ListEmployee = () => {
       .select()
       .then((result) => setEmployees(result.data as unknown as Employee[]));
   }, []);
-
-  if (employees.length) {
-    console.log(employees[0].birthday);
-  }
 
   return (
     <Table>

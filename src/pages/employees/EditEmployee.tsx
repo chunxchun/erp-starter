@@ -13,10 +13,10 @@ import EmployeeForm from "./EmployeeForm";
 const EmployeeSchema = z.custom<Employee>();
 
 const EditEmployee = () => {
-  const { id: userId } = useParams();
-  if (!userId) return;
+  const { id: employeeId } = useParams();
+  if (!employeeId) return;
 
-  const { t } = useTranslation("edit_employee");
+  const { t } = useTranslation("employees", { keyPrefix: "edit_employee" });
   const { toast } = useToast();
   const navigate = useNavigate();
   
@@ -26,7 +26,7 @@ const EditEmployee = () => {
       const { data } = await supabase
         .from("employees")
         .select()
-        .eq("id", userId)
+        .eq("id", employeeId)
         .single();
 
       return data as unknown as Employee;
@@ -34,12 +34,10 @@ const EditEmployee = () => {
   });
 
   const onSubmit = async (employee: EmployeeInsert) => {
-    // console.log(employee);
     const parsedEmployee = {
       ...employee,
       birthday: new Date(employee.birthday).toLocaleDateString("en-CA"), // YYYY-MM-DD
     };
-    // console.log(parsedEmployee);
 
     try {
       const { error } = await supabase
