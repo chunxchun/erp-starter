@@ -41,6 +41,22 @@ import {
 // import { Settings } from "./pages/settings";
 import Settings from "./pages/Settings.tsx";
 import Landing from "./pages/Landing.tsx";
+import CreateWarehouse from "./pages/warehouses/CreateWarehouse.tsx";
+import EditWarehouse from "./pages/warehouses/EditWarehouse.tsx";
+import ListWarehouse from "./pages/warehouses/ListWarehouse.tsx";
+import ShowWarehouse from "./pages/warehouses/ShowWarehouse.tsx";
+import CreateProduct from "./pages/products/CreateProduct.tsx";
+import EditProduct from "./pages/products/EditProduct.tsx";
+import ListProduct from "./pages/products/ListProduct.tsx";
+import ShowProduct from "./pages/products/ShowProduct.tsx";
+import CreateCategory from "./pages/categories/CreateCategory.tsx";
+import EditCategory from "./pages/categories/EditCategory.tsx";
+import ListCategory from "./pages/categories/ListCategory.tsx";
+import ShowCategory from "./pages/categories/ShowCategory.tsx";
+import CreateBrand from "./pages/brands/CreateBrand.tsx";
+import EditBrand from "./pages/brands/EditBrand.tsx";
+import ListBrand from "./pages/brands/ListBrand.tsx";
+import ShowBrand from "./pages/brands/ShowBrand.tsx";
 
 const router = createBrowserRouter([
   {
@@ -120,6 +136,46 @@ const router = createBrowserRouter([
           { path: ":id", element: <ShowTimesheet /> },
         ],
       },
+      {
+        path: "warehouses",
+        children: [
+          { path: "create", element: <CreateWarehouse /> },
+          { path: "edit/:id", element: <EditWarehouse /> },
+          { path: "list", element: <ListWarehouse /> },
+          { path: ":id", element: <ShowWarehouse /> },
+        ],
+      },
+      {
+        path: "products",
+        children: [
+          { path: "create", element: <CreateProduct /> },
+          { path: "edit/:id", element: <EditProduct /> },
+          { path: "list", element: <ListProduct /> },
+          { path: ":id", element: <ShowProduct /> },
+        ],
+      },
+      {
+        path: "categories",
+        children: [
+          { path: "create", element: <CreateCategory /> },
+          { path: "edit/:id", element: <EditCategory /> },
+          { path: "list", element: <ListCategory /> },
+          { path: ":id", element: <ShowCategory /> },
+        ],
+      },
+      {
+        path: "brands",
+        children: [
+          { path: "create", element: <CreateBrand /> },
+          { path: "edit/:id", element: <EditBrand /> },
+          { path: "list", element: <ListBrand /> },
+          { path: ":id", element: <ShowBrand /> },
+        ],
+      },
+      { path: "customers", children: [] },
+      { path: "suppliers", children: [] },
+      { path: "logistics", children: [] },
+
       { path: "settings", element: <Settings /> },
     ],
   },
