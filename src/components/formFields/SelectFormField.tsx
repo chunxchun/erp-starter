@@ -5,7 +5,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 
 import {
   Select,
@@ -14,12 +13,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-// import { CreateEmployeeType, EmployeeType } from "@/types/employeeType";
-import React, { useEffect, useState } from "react";
-import { Control, FieldValues, Path } from "react-hook-form";
 import { supabase } from "@/supabaseClient";
-
-// import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { useEffect, useState } from "react";
+import { Control, FieldValues, Path } from "react-hook-form";
 
 interface Props<T extends FieldValues> {
   control: Control<T>;
@@ -49,6 +45,7 @@ const SelectFormField = <T extends FieldValues>({
         setOptions(data);
       }
     };
+
     getData();
   }, [supabase, setOptions]);
 
@@ -59,7 +56,12 @@ const SelectFormField = <T extends FieldValues>({
       render={({ field }) => (
         <FormItem className="w-full">
           <FormLabel className="flex">{label}</FormLabel>
-          <Select onValueChange={field.onChange} defaultValue={field.value}>
+          <Select
+            onValueChange={field.onChange}
+            value={field.value}
+            defaultValue={field.value}
+            disabled={disabled}
+          >
             <FormControl>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder={placeholder} />
