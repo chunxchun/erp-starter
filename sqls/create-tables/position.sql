@@ -1,5 +1,6 @@
 -- create positions table schema
 -- DROP TABLE IF EXISTS positions;
+
 CREATE TABLE IF NOT EXISTS public.positions (
   id UUID NOT NULL DEFAULT uuid_generate_v4 (),
   name text NOT NULL,
