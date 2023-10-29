@@ -12,6 +12,7 @@ import { UseFormReturn } from "react-hook-form";
 
 import TextFormField from "@/components/formFields/TextFormField";
 import { TFunction } from "i18next";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   form: UseFormReturn<Role>;
@@ -19,7 +20,9 @@ interface Props {
   t: TFunction<"create_role">;
 }
 
-const EmployeeForm = ({ form, onSubmit, t }: Props) => {
+const RoleForm = ({ form, onSubmit, t }: Props) => {
+  const navigate = useNavigate();
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -35,7 +38,14 @@ const EmployeeForm = ({ form, onSubmit, t }: Props) => {
               placeholder={t("name")}
             />
           </CardContent>
-          <CardFooter>
+          <CardFooter className="flex justify-between">
+            <Button
+              type="button"
+              variant={"outline"}
+              onClick={() => navigate(-1)}
+            >
+              {t("cancel")}
+            </Button>
             <Button type="submit">{t("submit")}</Button>
           </CardFooter>
         </Card>
@@ -44,4 +54,4 @@ const EmployeeForm = ({ form, onSubmit, t }: Props) => {
   );
 };
 
-export default EmployeeForm;
+export default RoleForm;

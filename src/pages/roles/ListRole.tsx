@@ -1,33 +1,59 @@
-import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { supabase } from "@/supabaseClient";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
-type Role = {
-  id: string;
-  name: string;
-};
+import type { Role } from "@/types/Role";
 
 const ListRole = () => {
-  const [roles, setRoles] = useState<Role[]>([]);
   const { t } = useTranslation("list_role");
+  const [roles, setRoles] = useState<Role[]>([]);
 
   useEffect(() => {
     supabase
       .from("roles")
       .select()
-      .then((result) => {
-        console.log(result);
-        setRoles(result.data as unknown as Role[])
-      });
+      .then((result) => setRoles(result.data as unknown as Role[]));
   }, []);
 
   return (
-    <>
-      <h1>{t("title")}</h1>
-      {roles.map((e) => (
-        <p key={e.id}>{e.name}</p>
-      ))}
-    </>
+    <Table>
+      {/* <TableCaption>Roles</TableCaption> */}
+      <TableHeader>
+        <TableRow>
+          <TableHead className="text-center">#</TableHead>
+          <TableHead className="text-center">{t("name")}</TableHead>
+          <TableHead className="text-center">{t("actions")}</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {roles.map((role, idx) => (
+          <TableRow key={role.id}>
+            <TableCell className="font-medium">{idx + 1}</TableCell>
+            <TableCell>{role.name}</TableCell>
+            <TableCell>
+              <Button variant={"link"}>
+                <Link to={`/roles/${role.id}`}>{t("details")}</Link>
+              </Button>
+              <Button variant={"link"}>
+                <Link to={`/roles/edit/${role.id}`}>
+                  {t("edit")}
+                </Link>
+              </Button>
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
   );
 };
 
