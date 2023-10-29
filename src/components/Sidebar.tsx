@@ -127,9 +127,124 @@ const Sidebar = () => {
               </Button>
             </AccordionContent>
           </AccordionItem>
-        </Accordion>
 
-        
+          {/* warehouses */}
+          <AccordionItem value="warehouses">
+            <AccordionTrigger>{t("warehouses")}</AccordionTrigger>
+            <AccordionContent className="flex flex-row justify-center">
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/warehouses/list">{t("list")}</Link>
+              </Button>
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/warehouses/create">{t("create")}</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* products */}
+          <AccordionItem value="products">
+            <AccordionTrigger>{t("products")}</AccordionTrigger>
+            <AccordionContent className="flex flex-row justify-center">
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/products/list">{t("list")}</Link>
+              </Button>
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/products/create">{t("create")}</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* brands */}
+          <AccordionItem value="brands">
+            <AccordionTrigger>{t("brands")}</AccordionTrigger>
+            <AccordionContent className="flex flex-row justify-center">
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/brands/list">{t("list")}</Link>
+              </Button>
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/brands/create">{t("create")}</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* categories */}
+          <AccordionItem value="categories">
+            <AccordionTrigger>{t("categories")}</AccordionTrigger>
+            <AccordionContent className="flex flex-row justify-center">
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/categories/list">{t("list")}</Link>
+              </Button>
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/categories/create">{t("create")}</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* logistics */}
+          <AccordionItem value="logistics">
+            <AccordionTrigger>{t("logistics")}</AccordionTrigger>
+            <AccordionContent className="flex flex-row justify-center">
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/logistics/list">{t("list")}</Link>
+              </Button>
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/logistics/create">{t("create")}</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* sales */}
+          <AccordionItem value="sales">
+            <AccordionTrigger>{t("sales")}</AccordionTrigger>
+            <AccordionContent className="flex flex-row justify-center">
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/sales/list">{t("list")}</Link>
+              </Button>
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/sales/create">{t("create")}</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* purchases */}
+          <AccordionItem value="purchases">
+            <AccordionTrigger>{t("purchases")}</AccordionTrigger>
+            <AccordionContent className="flex flex-row justify-center">
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/purchases/list">{t("list")}</Link>
+              </Button>
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/purchases/create">{t("create")}</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* customers */}
+          <AccordionItem value="customers">
+            <AccordionTrigger>{t("customers")}</AccordionTrigger>
+            <AccordionContent className="flex flex-row justify-center">
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/customers/list">{t("list")}</Link>
+              </Button>
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/customers/create">{t("create")}</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* suppliers */}
+          <AccordionItem value="suppliers">
+            <AccordionTrigger>{t("suppliers")}</AccordionTrigger>
+            <AccordionContent className="flex flex-row justify-center">
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/suppliers/list">{t("list")}</Link>
+              </Button>
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/suppliers/create">{t("create")}</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
         <SheetFooter>
           <SheetClose asChild>
             <Button className="flex" variant={"link"} onClick={closeSheet}>
