@@ -1,3 +1,26 @@
+import { navbar } from "./resources/en/navbar";
+import { sidebar } from "./resources/en/sidebar";
+
+import { roles } from "./resources/en/roles";
+import { employees } from "./resources/en/employees";
+import { departments } from "./resources/en/departments";
+import { positions } from "./resources/en/positions";
+import { payrolls } from "./resources/en/payrolls";
+import { leaves } from "./resources/en/leaves";
+import { timesheets } from "./resources/en/timesheets";
+
+import { warehouses } from "./resources/en/warehouses";
+import { products } from "./resources/en/products";
+import { brands } from "./resources/en/brands";
+import { categories } from "./resources/en/categories";
+import { logistics } from "./resources/en/logistics";
+import { sales } from "./resources/en/sales";
+import { purchases } from "./resources/en/purchases";
+import { suppliers } from "./resources/en/suppliers";
+import { customers } from "./resources/en/customers";
+
+// import { reports } from "./resources/en/reports";
+
 export const en = {
   translation: {
     Welcome: "Welcome to React and react-i18next",
@@ -7,139 +30,29 @@ export const en = {
     title: "Welcome to ERP System",
     desc: "Modern cloud-based system for managing the company's internal affairs",
   },
-  sidebar: {
-    title: "ERP System",
-    desc: "Modern cloud-based system for managing the company's internal affairs",
-    menu: "Menu",
-    list: "List",
-    create: "Create",
-    roles: "Roles",
-    employees: "Employees",
-    departments: "Departments",
-    positions: "Positions",
-    payrolls: "Payrolls",
-    leaves: "Leaves",
-    timesheets: "Timesheets",
-    settings: "Settings",
-  },
-  list_role: {
-    title: "Role List",
-  },
+  navbar:navbar,
+  sidebar:sidebar,
+  // resources
+  roles: roles,
+  employees: employees,
+  departments: departments,
+  positions: positions,
+  payrolls: payrolls,
+  leaves: leaves,
+  timesheets: timesheets,
+  warehouses: warehouses,
+  products: products,
+  brands: brands,
+  categories: categories,
+  logistics: logistics,
+  sales: sales,
+  purchases: purchases,
+  suppliers: suppliers,
+  customers: customers,
+
   select_form: {
     placeholder: "Please select",
   },
-  create_employee: {
-    title: "Create Employee",
-    nickname: "Nickname",
-    first_name: "First Name",
-    last_name: "Last Name",
-    email: "Email",
-    address: "Address",
-    hk_id: "HK ID",
-    birthday: "Birthday",
-    mobile: "Mobile",
-    role: "Role",
-    supervisor: "Supervisor",
-    submit: "Submit",
-    select_form_placeholder: "Please select",
-    submit_success_msg: "Create employee success",
-    submit_fail_msg: "Create employee fail",
-  },
-  edit_employee: {
-    title: "Edit Employee",
-    nickname: "Name",
-    first_name: "First Name",
-    last_name: "Last Name",
-    email: "Email",
-    address: "Address",
-    hk_id: "HK ID",
-    birthday: "Birthday",
-    mobile: "Mobile",
-    role: "Role",
-    supervisor: "Supervisor",
-    submit: "Submit",
-    select_form_placeholder: "Please select",
-    submit_success_msg: "Edit employee success",
-    submit_fail_msg: "Edit employee fail",
-  },
-  show_employee: {
-    title: "Employee Detail",
-    nickname: "Nickname",
-    first_name: "First Name",
-    last_name: "Last Name",
-    email: "Email",
-    address: "Address",
-    hk_id: "HK ID",
-    birthday: "Birthday",
-    mobile: "Mobile",
-    role: "Role",
-    supervisor: "Supervisor",
-    edit: "Edit",
-    delete: "Delete",
-    back: "Back",
-  },
-  list_employee: {
-    title: "Employee List",
-    create: "Create",
-    search: "Search",
-    search_placeholder: "Search by name",
-    nickname: "Nickname",
-    birthday: "Birthday",
-    address: "Address",
-    email: "Email",
-    actions: "Actions",
-    details: "Details",
-    edit: "Edit",
-    delete: "Delete",
-  },
-  create_role: {
-    title: "Create Role",
-    name: "Name",
-    submit: "Submit",
-    submit_success_msg: "Create role success",
-    submit_fail_msg: "Create role fail",
-  },
-  edit_role: {
-    title: "Edit Role",
-    name: "Name",
-    submit: "Submit",
-    submit_success_msg: "Edit role success",
-    submit_fail_msg: "Edit role fail",
-  },
-  show_role: {
-    title: "Role Detail",
-    name: "Name",
-    edit: "Edit",
-    delete: "Delete",
-    back: "Back",
-  },
-  create_department: {
-    title: "Create Department",
-    name: "Name",
-    submit: "Submit",
-    submit_success_msg: "Create department success",
-    submit_fail_msg: "Create department fail",
-  },
-  edit_department: {
-    title: "Edit Department",
-    name: "Name",
-    submit: "Submit",
-    submit_success_msg: "Edit department success",
-    submit_fail_msg: "Edit department fail",
-  },
-  show_department: {
-    title: "Department Detail",
-    name: "Name",
-    edit: "Edit",
-    delete: "Delete",
-    back: "Back",
-  },
-  list_department: {
-    title: "Department List",
-    name: "Name",
-    actions: "Actions",
-    details: "Details",
-    edit: "Edit",
-  },
+
   sign_out_button: { sign_out: "Sign Out" },
 };

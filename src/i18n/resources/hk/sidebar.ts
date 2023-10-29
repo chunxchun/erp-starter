@@ -1,0 +1,30 @@
+export const sidebar = {
+  title: "ERP 系統",
+  desc: "雲端企業資源規劃系統",
+  menu: "選單",
+  // actions
+  list: "列表",
+  create: "新增",
+  show: "詳情",
+  edit: "編輯",
+  // resources
+  roles: "權限",
+  employees: "員工",
+  departments: "部門",
+  positions: "職位",
+  payrolls: "薪酬",
+  leaves: "假期",
+  timesheets: "工時",
+  warehouses: "倉庫",
+  products: "產品",
+  brands: "品牌",
+  categories: "類別",
+  logistics: "物流",
+  sales: "銷售",
+  purchases: "採購",
+  suppliers: "供應商",
+  customers: "客戶",
+  reports: "報告",
+  // sections
+  settings: "設定",
+};

@@ -1,3 +1,26 @@
+import { navbar } from "./resources/hk/navbar";
+import { sidebar } from "./resources/hk/sidebar";
+
+import { roles } from "./resources/hk/roles";
+import { employees } from "./resources/hk/employees";
+import { departments } from "./resources/hk/departments";
+import { positions } from "./resources/hk/positions";
+import { payrolls } from "./resources/hk/payrolls";
+import { leaves } from "./resources/hk/leaves";
+import { timesheets } from "./resources/hk/timesheets";
+
+import { warehouses } from "./resources/hk/warehouses";
+import { products } from "./resources/hk/products";
+import { brands } from "./resources/hk/brands";
+import { categories } from "./resources/hk/categories";
+import { logistics } from "./resources/hk/logistics";
+import { sales } from "./resources/hk/sales";
+import { purchases } from "./resources/hk/purchases";
+import { suppliers } from "./resources/hk/suppliers";
+import { customers } from "./resources/hk/customers";
+
+// import { reports } from "./resources/hk/reports";
+
 export const hk = {
   translation: {
     Welcome: "歡迎使用 React 和 react-i18next",
@@ -7,139 +30,29 @@ export const hk = {
     title: "歡迎使用 ERP 系統",
     desc: "現代化雲端系統，用於管理公司內部事務",
   },
-  sidebar: {
-    title: "ERP 系統",
-    desc: "雲端企業資源規劃系統",
-    menu: "選單",
-    list: "列表",
-    create: "新增",
-    roles: "權限",
-    employees: "員工",
-    departments: "部門",
-    positions: "職位",
-    payrolls: "薪酬",
-    leaves: "假期",
-    timesheets: "工時",
-    settings: "設定",
-  },
-  list_role: {
-    title: "角色列表",
-  },
+  navbar: navbar,
+  sidebar: sidebar,
+  // resources
+  roles: roles,
+  employees: employees,
+  departments: departments,
+  positions: positions,
+  payrolls: payrolls,
+  leaves: leaves,
+  timesheets: timesheets,
+  warehouses: warehouses,
+  products: products,
+  brands: brands,
+  categories: categories,
+  logistics: logistics,
+  sales: sales,
+  purchases: purchases,
+  suppliers: suppliers,
+  customers: customers,
+
   select_form: {
     placeholder: "請選擇",
   },
-  create_employee: {
-    title: "新增員工",
-    nickname: "暱稱",
-    first_name: "名",
-    last_name: "姓",
-    email: "電郵",
-    address: "地址",
-    hk_id: "香港身份證號碼",
-    birthday: "生日",
-    mobile: "電話",
-    role: "權限",
-    supervisor: "上司",
-    submit: "提交",
-    select_form_placeholder: "請選擇",
-    submit_success_msg: "新增員工成功",
-    submit_fail_msg: "新增員工失敗",
-  },
-  edit_employee: {
-    title: "編輯員工",
-    nickname: "暱稱",
-    first_name: "名",
-    last_name: "姓",
-    email: "電郵",
-    address: "地址",
-    hk_id: "香港身份證號碼",
-    birthday: "生日",
-    mobile: "電話",
-    role: "權限",
-    supervisor: "上司",
-    submit: "提交",
-    select_form_placeholder: "請選擇",
-    submit_success_msg: "編輯員工成功",
-    submit_fail_msg: "編輯員工失敗",
-  },
-  show_employee: {
-    title: "員工詳情",
-    nickname: "暱稱",
-    first_name: "名",
-    last_name: "姓",
-    email: "電郵",
-    address: "地址",
-    hk_id: "香港身份證號碼",
-    birthday: "生日",
-    mobile: "電話",
-    role: "權限",
-    supervisor: "上司",
-    edit: "編輯",
-    delete: "刪除",
-    back: "返回",
-  },
-  list_employee: {
-    title: "員工列表",
-    create: "新增",
-    search: "搜尋",
-    search_placeholder: "請輸入員工姓名",
-    nickname: "暱稱",
-    birthday: "生日", 
-    address: "地址",
-    email: "電郵",
-    actions: "操作",
-    details: "詳情",
-    edit: "編輯",
-    delete: "刪除",
-  },
-  create_role: {
-    title: "新增權限",
-    name: "名稱",
-    submit: "提交",
-    submit_success_msg: "新增權限成功",
-    submit_fail_msg: "新增權限失敗",
-  },
-  edit_role: {
-    title: "編輯權限",
-    name: "名稱",
-    submit: "提交",
-    submit_success_msg: "編輯權限成功",
-    submit_fail_msg: "編輯權限失敗",
-  },
-  show_role: {
-    title: "權限詳情",
-    name: "名稱",
-    edit: "編輯",
-    delete: "刪除",
-    back: "返回",
-  },
-  create_department: {
-    title: "新增部門",
-    name: "名稱",
-    submit: "提交",
-    submit_success_msg: "新增部門成功",
-    submit_fail_msg: "新增部門失敗",
-  },
-  edit_department: {
-    title: "編輯部門",
-    name: "名稱",
-    submit: "提交",
-    submit_success_msg: "編輯部門成功",
-    submit_fail_msg: "編輯部門失敗",
-  },
-  show_department: {
-    title: "部門詳情",
-    name: "名稱",
-    edit: "編輯",
-    delete: "刪除",
-    back: "返回",
-  },
-  list_department: {
-    title: "部門列表",
-    name: "名稱",
-    actions: "操作",
-    details: "詳情",
-    edit: "編輯",
-  },
-  sign_out_button: {sign_out: "登出"},
+
+  sign_out_button: { sign_out: "登出" },
 };

@@ -1,0 +1,30 @@
+export const sidebar = {
+  title: "ERP System",
+  desc: "Modern cloud-based system for managing the company's internal affairs",
+  menu: "Menu",
+  // actions
+  list: "List",
+  create: "Create",
+  show: "Show",
+  edit: "Edit",
+  // resources
+  roles: "Roles",
+  employees: "Employees",
+  departments: "Departments",
+  positions: "Positions",
+  payrolls: "Payrolls",
+  leaves: "Leaves",
+  timesheets: "Timesheets",
+  warehouses: "Warehouses",
+  products: "Products",
+  brands: "Brands",
+  categories: "Categories",
+  logistics: "Logistics",
+  sales: "Sales",
+  purchases: "Purchases",
+  suppliers: "Suppliers",
+  customers: "Customers",
+  reports: "Reports",
+  // sections
+  settings: "Settings",
+};
