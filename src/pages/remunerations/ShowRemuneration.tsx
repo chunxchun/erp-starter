@@ -18,7 +18,9 @@ const ShowRemuneration = () => {
   const { id: remunerationId } = useParams();
   if (!remunerationId) return;
 
-  const { t } = useTranslation("show_remuneration");
+  const { t } = useTranslation("remunerations", {
+    keyPrefix: "show_remuneration",
+  });
   const navigate = useNavigate();
 
   const [remuneration, setRemuneration] = useState<Remuneration | null>(null);
@@ -46,15 +48,21 @@ const ShowRemuneration = () => {
         <CardContent className="flex flex-col items-start px-8 space-y-4">
           <p>
             <Label>{t("employee_id")}</Label>
-            <span className="ml-4 font-semibold">{remuneration?.employees.nickname}</span>
+            <span className="ml-4 font-semibold">
+              {remuneration?.employees.nickname}
+            </span>
           </p>
           <p>
             <Label>{t("job_id")}</Label>
-            <span className="ml-4 font-semibold">{remuneration?.jobs.name}</span>
+            <span className="ml-4 font-semibold">
+              {remuneration?.jobs.name}
+            </span>
           </p>
           <p>
             <Label>{t("start_date")}</Label>
-            <span className="ml-4 font-semibold">{remuneration?.start_date}</span>
+            <span className="ml-4 font-semibold">
+              {remuneration?.start_date}
+            </span>
           </p>
           <p>
             <Label>{t("end_date")}</Label>
@@ -62,15 +70,21 @@ const ShowRemuneration = () => {
           </p>
           <p>
             <Label>{t("entitled_sick_leave")}</Label>
-            <span className="ml-4 font-semibold">{remuneration?.entitled_sick_leave}</span>
+            <span className="ml-4 font-semibold">
+              {remuneration?.entitled_sick_leave}
+            </span>
           </p>
           <p>
             <Label>{t("entitled_annual_leave")}</Label>
-            <span className="ml-4 font-semibold">{remuneration?.entitled_annual_leave}</span>
+            <span className="ml-4 font-semibold">
+              {remuneration?.entitled_annual_leave}
+            </span>
           </p>
           <p>
             <Label>{t("entitled_maternity_leave")}</Label>
-            <span className="ml-4 font-semibold">{remuneration?.entitled_maternity_leave}</span>
+            <span className="ml-4 font-semibold">
+              {remuneration?.entitled_maternity_leave}
+            </span>
           </p>
           <p>
             <Label>{t("type")}</Label>
@@ -78,7 +92,9 @@ const ShowRemuneration = () => {
           </p>
           <p>
             <Label>{t("payment_mode")}</Label>
-            <span className="ml-4 font-semibold">{remuneration?.payment_mode}</span>
+            <span className="ml-4 font-semibold">
+              {remuneration?.payment_mode}
+            </span>
           </p>
           <p>
             <Label>{t("amount")}</Label>
@@ -89,7 +105,9 @@ const ShowRemuneration = () => {
           <Button onClick={() => navigate(-1)} variant={"outline"}>
             {t("back")}
           </Button>
-          <Button onClick={() => navigate(`/remunerations/edit/${remunerationId}`)}>
+          <Button
+            onClick={() => navigate(`/remunerations/edit/${remunerationId}`)}
+          >
             {t("edit")}
           </Button>
         </CardFooter>

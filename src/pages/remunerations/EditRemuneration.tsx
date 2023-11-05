@@ -16,7 +16,9 @@ const EditRemuneration = () => {
   const { id: remunerationId } = useParams();
   if (!remunerationId) return;
 
-  const { t } = useTranslation("edit_remuneration");
+  const { t } = useTranslation("remunerations", {
+    keyPrefix: "edit_remuneration",
+  });
   const { toast } = useToast();
   const navigate = useNavigate();
 

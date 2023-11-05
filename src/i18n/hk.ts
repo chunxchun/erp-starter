@@ -4,6 +4,7 @@ import { sidebar } from "./resources/hk/sidebar";
 import { roles } from "./resources/hk/roles";
 import { employees } from "./resources/hk/employees";
 import { departments } from "./resources/hk/departments";
+import { remunerations } from "./resources/hk/remunerations";
 import { positions } from "./resources/hk/positions";
 import { payrolls } from "./resources/hk/payrolls";
 import { leaves } from "./resources/hk/leaves";
@@ -18,6 +19,7 @@ import { sales } from "./resources/hk/sales";
 import { purchases } from "./resources/hk/purchases";
 import { suppliers } from "./resources/hk/suppliers";
 import { customers } from "./resources/hk/customers";
+// import { reminders } from "./resources/hk/reminders";
 
 // import { reports } from "./resources/hk/reports";
 
@@ -37,6 +39,7 @@ export const hk = {
   employees: employees,
   departments: departments,
   positions: positions,
+  remunerations: remunerations,
   payrolls: payrolls,
   leaves: leaves,
   timesheets: timesheets,
@@ -49,7 +52,7 @@ export const hk = {
   purchases: purchases,
   suppliers: suppliers,
   customers: customers,
-
+  // reminders: reminders,
   select_form: {
     placeholder: "請選擇",
   },

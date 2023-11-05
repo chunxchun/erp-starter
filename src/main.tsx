@@ -57,6 +57,22 @@ import CreateBrand from "./pages/brands/CreateBrand.tsx";
 import EditBrand from "./pages/brands/EditBrand.tsx";
 import ListBrand from "./pages/brands/ListBrand.tsx";
 import ShowBrand from "./pages/brands/ShowBrand.tsx";
+import CreateCustomer from "./pages/customers/CreateCustomer.tsx";
+import EditCustomer from "./pages/customers/EditCustomer.tsx";
+import ListCustomer from "./pages/customers/ListCustomer.tsx";
+import ShowCustomer from "./pages/customers/ShowCustomer.tsx";
+import CreateSupplier from "./pages/suppliers/CreateSupplier.tsx";
+import EditSupplier from "./pages/suppliers/EditSupplier.tsx";
+import ListSupplier from "./pages/suppliers/ListSupplier.tsx";
+import ShowSupplier from "./pages/suppliers/ShowSupplier.tsx";
+import CreateLogistic from "./pages/logistics/CreateLogistic.tsx";
+import EditLogistic from "./pages/logistics/EditLogistic.tsx";
+import ListLogistic from "./pages/logistics/ListLogistic.tsx";
+import ShowLogistic from "./pages/logistics/ShowLogistic.tsx";
+import CreateRemuneration from "./pages/remunerations/CreateRemuneration.tsx";
+import EditRemuneration from "./pages/remunerations/EditRemuneration.tsx";
+import ListRemuneration from "./pages/remunerations/ListRemuneration.tsx";
+import ShowRemuneration from "./pages/remunerations/ShowRemuneration.tsx";
 
 const router = createBrowserRouter([
   {
@@ -107,6 +123,15 @@ const router = createBrowserRouter([
           { path: "edit/:id", element: <EditJob /> },
           { path: "list", element: <ListJob /> },
           { path: ":id", element: <ShowJob /> },
+        ],
+      },
+      {
+        path: "remunerations",
+        children: [
+          { path: "create", element: <CreateRemuneration /> },
+          { path: "edit/:id", element: <EditRemuneration /> },
+          { path: "list", element: <ListRemuneration /> },
+          { path: ":id", element: <ShowRemuneration /> },
         ],
       },
       {
@@ -172,9 +197,33 @@ const router = createBrowserRouter([
           { path: ":id", element: <ShowBrand /> },
         ],
       },
-      { path: "customers", children: [] },
-      { path: "suppliers", children: [] },
-      { path: "logistics", children: [] },
+      {
+        path: "customers",
+        children: [
+          { path: "create", element: <CreateCustomer /> },
+          { path: "edit/:id", element: <EditCustomer /> },
+          { path: "list", element: <ListCustomer /> },
+          { path: ":id", element: <ShowCustomer /> },
+        ],
+      },
+      {
+        path: "suppliers",
+        children: [
+          { path: "create", element: <CreateSupplier /> },
+          { path: "edit/:id", element: <EditSupplier /> },
+          { path: "list", element: <ListSupplier /> },
+          { path: ":id", element: <ShowSupplier /> },
+        ],
+      },
+      {
+        path: "logistics",
+        children: [
+          { path: "create", element: <CreateLogistic /> },
+          { path: "edit/:id", element: <EditLogistic /> },
+          { path: "list", element: <ListLogistic /> },
+          { path: ":id", element: <ShowLogistic /> },
+        ],
+      },
 
       { path: "settings", element: <Settings /> },
     ],

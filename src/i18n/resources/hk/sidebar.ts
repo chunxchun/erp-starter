@@ -12,7 +12,8 @@ export const sidebar = {
   employees: "員工",
   departments: "部門",
   positions: "職位",
-  payrolls: "薪酬",
+  remunerations: "薪酬",
+  payrolls: "薪資",
   leaves: "假期",
   timesheets: "工時",
   warehouses: "倉庫",
@@ -25,6 +26,7 @@ export const sidebar = {
   suppliers: "供應商",
   customers: "客戶",
   reports: "報告",
+  reminders: "提醒",
   // sections
   settings: "設定",
 };

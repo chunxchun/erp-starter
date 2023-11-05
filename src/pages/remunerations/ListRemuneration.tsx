@@ -15,14 +15,18 @@ import { Link } from "react-router-dom";
 import type { Remuneration } from "@/types/Remuneration";
 
 const ListRemuneration = () => {
-  const { t } = useTranslation("list_remuneration");
+  const { t } = useTranslation("remunerations", {
+    keyPrefix: "list_remuneration",
+  });
   const [remunerations, setRemunerations] = useState<Remuneration[]>([]);
 
   useEffect(() => {
     supabase
       .from("remunerations")
       .select(`*, jobs(name), employees(nickname)`)
-      .then((result) => setRemunerations(result.data as unknown as Remuneration[]));
+      .then((result) =>
+        setRemunerations(result.data as unknown as Remuneration[])
+      );
   }, []);
 
   return (
@@ -42,7 +46,9 @@ const ListRemuneration = () => {
             <TableCell>{remuneration.name}</TableCell>
             <TableCell>
               <Button variant={"link"}>
-                <Link to={`/remunerations/${remuneration.id}`}>{t("details")}</Link>
+                <Link to={`/remunerations/${remuneration.id}`}>
+                  {t("details")}
+                </Link>
               </Button>
               <Button variant={"link"}>
                 <Link to={`/remunerations/edit/${remuneration.id}`}>

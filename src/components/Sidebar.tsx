@@ -89,6 +89,19 @@ const Sidebar = () => {
             </AccordionContent>
           </AccordionItem>
 
+          {/* remunerations */}
+          <AccordionItem value="remunerations">
+            <AccordionTrigger>{t("remunerations")}</AccordionTrigger>
+            <AccordionContent className="flex flex-row justify-center">
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/remunerations/list">{t("list")}</Link>
+              </Button>
+              <Button variant={"link"} onClick={closeSheet}>
+                <Link to="/remunerations/create">{t("create")}</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+
           {/* payrolls */}
           <AccordionItem value="payrolls">
             <AccordionTrigger>{t("payrolls")}</AccordionTrigger>

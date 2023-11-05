@@ -4,6 +4,7 @@ import { sidebar } from "./resources/en/sidebar";
 import { roles } from "./resources/en/roles";
 import { employees } from "./resources/en/employees";
 import { departments } from "./resources/en/departments";
+import { remunerations } from "./resources/en/remunerations";
 import { positions } from "./resources/en/positions";
 import { payrolls } from "./resources/en/payrolls";
 import { leaves } from "./resources/en/leaves";
@@ -18,7 +19,7 @@ import { sales } from "./resources/en/sales";
 import { purchases } from "./resources/en/purchases";
 import { suppliers } from "./resources/en/suppliers";
 import { customers } from "./resources/en/customers";
-
+// import { reminders } from "./resources/en/reminders";
 // import { reports } from "./resources/en/reports";
 
 export const en = {
@@ -30,13 +31,14 @@ export const en = {
     title: "Welcome to ERP System",
     desc: "Modern cloud-based system for managing the company's internal affairs",
   },
-  navbar:navbar,
-  sidebar:sidebar,
+  navbar: navbar,
+  sidebar: sidebar,
   // resources
   roles: roles,
   employees: employees,
   departments: departments,
   positions: positions,
+  remunerations: remunerations,
   payrolls: payrolls,
   leaves: leaves,
   timesheets: timesheets,
@@ -49,7 +51,7 @@ export const en = {
   purchases: purchases,
   suppliers: suppliers,
   customers: customers,
-
+  // reminders: reminders,
   select_form: {
     placeholder: "Please select",
   },

@@ -15,7 +15,9 @@ import { Remuneration, RemunerationInsert } from "@/types/Remuneration";
 const RemunerationSchema = z.custom<Remuneration>();
 
 const CreateRemuneration = () => {
-  const { t } = useTranslation("create_remuneration");
+  const { t } = useTranslation("remunerations", {
+    keyPrefix: "create_remuneration",
+  });
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -23,7 +25,7 @@ const CreateRemuneration = () => {
     resolver: zodResolver(RemunerationSchema),
     defaultValues: {
       name: "",
-      employee_id: '',
+      employee_id: "",
       job_id: "",
       start_date: "",
       end_date: "",

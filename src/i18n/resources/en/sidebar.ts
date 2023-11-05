@@ -12,6 +12,7 @@ export const sidebar = {
   employees: "Employees",
   departments: "Departments",
   positions: "Positions",
+  remunerations: "Remunerations",
   payrolls: "Payrolls",
   leaves: "Leaves",
   timesheets: "Timesheets",
@@ -25,6 +26,7 @@ export const sidebar = {
   suppliers: "Suppliers",
   customers: "Customers",
   reports: "Reports",
+  reminders: "Reminders",
   // sections
   settings: "Settings",
 };
